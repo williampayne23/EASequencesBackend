@@ -1,0 +1,19 @@
+{
+  "name": "ea-sequences-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/williampayne23/EASequencesBackend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/williampayne23/EASequencesBackend/issues"
+  },
+  "homepage": "https://github.com/williampayne23/EASequencesBackend#readme"
+}
