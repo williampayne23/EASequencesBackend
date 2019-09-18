@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/williampayne23/EASequencesBackend/issues"
   },
-  "homepage": "https://github.com/williampayne23/EASequencesBackend#readme"
+  "homepage": "https://github.com/williampayne23/EASequencesBackend#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "sequelize": "^5.18.4",
+    "sqlite3": "^4.1.0"
+  }
 }
