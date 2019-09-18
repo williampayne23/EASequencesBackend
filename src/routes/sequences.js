@@ -23,11 +23,11 @@ class SequenceController {
 
 	async createSequence(req, res) {
 		try {
-			await Sequence.create({ 'Name': req.query.name, 'Description': req.query.description });
+			await Sequence.create({ 'Name': req.body.name, 'Description': req.body.description });
 			res.send('Created');
 		} catch (e) {
 			res.status(500);
-			res.send('Failed to create sequence');
+			res.send('Failed to create sequence:' + e);
 		}
 	}
 }

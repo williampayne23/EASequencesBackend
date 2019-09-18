@@ -16,7 +16,7 @@ class LinkController {
 
 	async createLink(req, res) {
 		try {
-			await Link.create({ 'Name': req.query.name, 'Description': req.query.description, 'url': req.query.url });
+			await Link.create({ 'Name': req.body.name, 'Description': req.body.description, 'url': req.body.url });
 			res.send('Created');
 		} catch (e) {
 			res.status(500);

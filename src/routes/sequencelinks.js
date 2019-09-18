@@ -16,7 +16,7 @@ class SequenceLinkController {
 
 	async createSequenceLink(req, res) {
 		try {
-			await SequenceLink.create({ 'SequenceId': req.query.sequence, 'LinkId': req.query.link, 'order': req.query.order });
+			await SequenceLink.create({ 'SequenceId': req.body.sequence, 'LinkId': req.body.link, 'order': req.body.order });
 			res.send('Created');
 		} catch (e) {
 			res.status(500);
