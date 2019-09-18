@@ -50,23 +50,6 @@ const SequenceLink = sequelize.define('SequenceLink', {
 Sequence.belongsToMany(Link, { through: SequenceLink });
 Link.belongsToMany(Sequence, { through: SequenceLink });
 
-
-// Sequence.associate = (models) => {
-// 	Sequence.belongsToMany(models.Link, {
-// 		through: 'SequenceLink',
-// 		as: 'links',
-// 		foreignKey: 'sequenceId'
-// 	});
-// };
-
-// Link.associate = (models) => {
-// 	Link.belongsToMany(models.Sequence, {
-// 		through: 'SequenceLink',
-// 		as: 'sequences',
-// 		foreignKey: 'sequenceId'
-// 	});
-// };
-
 module.exports = {
 	sequelize,
 	Sequence,
