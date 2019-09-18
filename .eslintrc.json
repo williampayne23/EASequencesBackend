@@ -28,6 +28,13 @@
         "semi": [
             "error",
             "always"
+        ],
+        "no-multiple-empty-lines": [
+            "error",
+            {
+                "max": 1,
+                "maxBOF": 0
+            }
         ]
     }
 }
