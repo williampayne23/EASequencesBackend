@@ -18,13 +18,10 @@ class SequenceController {
 			await SequenceManager.createSequence(req.body);
 			res.send('Created');
 		} catch (e) {
+			console.error(e);
 			res.status(500);
 			res.send('Failed to create sequence');
 		}
-	}
-
-	async reorderSequence(req, res) {
-
 	}
 }
 

@@ -5,12 +5,12 @@ class SequenceManager {
 		return sequelize.transaction(t => {
 			return Sequence.create({ Name: sequenceData.Name, Description: sequenceData.Description }, { transaction: t })
 				.then(sequence => {
-					return Promise.all(sequenceData.links.map(async link => {
-						return Link.findOrCreate({ where: link }).then((links, i) => {
-							return sequence.addLink(links[0], { through: { order: i } });
+					return Promise.all(sequenceData.links.map(link => {
+						return Link.findOrCreate({ where: link, transaction: t }).then((links, i) => {
+							console.log(links);
+							return sequence.addLink(links[0], { through: { order: i }, transaction: t });
 						});
-					}))
-						.then(() => sequence);
+					})).then(() => sequence);
 				});
 		});
 	}

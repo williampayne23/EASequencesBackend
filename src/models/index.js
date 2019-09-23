@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 
 var config = require('../config');
 
-const sequelize = new Sequelize('sequences', 'will', config.password, {
+const sequelize = new Sequelize('sequences', config.user, config.password, {
 	dialect: 'mysql',
 	logging: false
 });
