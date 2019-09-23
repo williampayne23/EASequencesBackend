@@ -12,7 +12,7 @@ then install npm repositories enter the folder and run
 ```bash
 npm install
 ```
-This project uses a mysql database so to use it you need to install mysql, set up a user for your sql database and then write these credentials into ./src/config.js.
+This project uses a mysql database so to use it you need to install mysql, set up a user for your sql database and then write these credentials into the credentials file in `./src/models`
 
 Finally the database structure can be set up by running the initiateFreshDatabase command
 

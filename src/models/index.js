@@ -1,8 +1,8 @@
 const Sequelize = require('sequelize');
 
-var config = require('../config');
+var cred = require('./credentials');
 
-const sequelize = new Sequelize('sequences', config.user, config.password, {
+const sequelize = new Sequelize('sequences', cred.user, cred.password, {
 	dialect: 'mysql',
 	logging: false
 });
