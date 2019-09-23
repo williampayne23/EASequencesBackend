@@ -2,10 +2,9 @@ const Sequelize = require('sequelize');
 
 var config = require('../config');
 
-const sequelize = new Sequelize('Bookish', 'sqlite3', config.password, {
-	host: 'localhost',
-	dialect: 'sqlite',
-	storage: 'database.sqlite'
+const sequelize = new Sequelize('sequences', 'will', config.password, {
+	dialect: 'mysql',
+	logging: false
 });
 
 const Sequence = sequelize.define('Sequence', {

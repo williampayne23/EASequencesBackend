@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { Sequence, SequenceLink, Link } = require('../models');
+const SequenceManager = require('../services/sequenceManager');
 
 class SequenceController {
 	constructor() {
@@ -9,26 +9,22 @@ class SequenceController {
 	}
 
 	async getSequences(req, res) {
-		const result = await Sequence.findAll({
-			include: [{
-				model: Link,
-				as: 'Links',
-				required: false,
-				through: { attributes: [] },
-			}],
-			order: [[Link, SequenceLink, 'order', 'ASC']]
-		});
+		const result = await SequenceManager.getSequences();
 		res.send(result);
 	}
 
 	async createSequence(req, res) {
 		try {
-			await Sequence.create({ 'Name': req.body.name, 'Description': req.body.description });
+			await SequenceManager.createSequence(req.body);
 			res.send('Created');
 		} catch (e) {
 			res.status(500);
-			res.send('Failed to create sequence:' + e);
+			res.send('Failed to create sequence');
 		}
+	}
+
+	async reorderSequence(req, res) {
+
 	}
 }
 
